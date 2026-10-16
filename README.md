@@ -1,6 +1,6 @@
 # Linkesh Kumar E — Modern Portfolio & Resume Website
 
-A modern, high-performance personal portfolio and interactive resume website built for **Linkesh Kumar E** (B.Tech Computer Science & Engineering, CGPA: 9.20).
+A modern, high-performance personal portfolio and interactive resume website built for **Linkesh Kumar E**.
 
 Designed specifically to impress technical recruiters, engineering leaders, and hiring managers with sleek dark glassmorphism, responsive UI, interactive project modals, and a printable PDF resume engine.
 
