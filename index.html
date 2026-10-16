@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linkesh Kumar E | Data Analyst & Software Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Linkesh Kumar E - B.Tech CSE (9.20 CGPA). Aspiring Data Analyst & Software Engineer specializing in Power BI, SQL, Python, and Multi-Modal Deep Learning.">
+  <meta name="keywords" content="Linkesh Kumar, Data Analyst, Software Engineer, Portfolio, Power BI, Python, PyTorch, SQL, Panclive, ParkIt, Chennai">
+  <meta name="author" content="Linkesh Kumar E">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Linkesh Kumar E | Portfolio">
+  <meta property="og:description" content="Motivated B.Tech CSE Graduate with strong programming, AI/ML, and Data Analytics skills. Open to opportunities.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Interactive Particle Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast hidden">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">LK</span>
+        <span class="logo-bracket">/&gt;</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#achievements" class="nav-link">Honors</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="resume-btn" class="btn btn-outline btn-sm" onclick="openResumeModal()">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Resume</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm hire-btn">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About Me</a></li>
+        <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+        <li><a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+        <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-code"></i> Projects</a></li>
+        <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#achievements" class="mobile-link"><i class="fa-solid fa-award"></i> Certifications & Honors</a></li>
+        <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <button id="mobile-theme-toggle" class="btn btn-outline w-full mb-2" onclick="toggleTheme()" style="margin-bottom: 0.6rem;">
+          <i class="fa-solid fa-moon"></i> <span>Toggle Theme</span>
+        </button>
+        <button class="btn btn-primary w-full" onclick="openResumeModal(); closeMobileMenu();">
+          <i class="fa-solid fa-file-pdf"></i> View & Print Resume
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="status-pill animate-fade-in">
+            <span class="pulse-dot"></span>
+            <span>Available for Immediate Full-Time / Entry-Level Roles</span>
+          </div>
+
+          <h1 class="hero-title animate-fade-in-up">
+            Hello, I'm <span class="gradient-text">Linkesh Kumar E</span>
+          </h1>
+
+          <div class="hero-typing-wrapper">
+            <span class="typing-prefix">I am a </span>
+            <span id="typing-text" class="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Motivated <strong>B.Tech Computer Science graduate (CGPA: 9.20)</strong> with strong programming, 
+            <strong>Data Analytics (Power BI, SQL)</strong>, and <strong>Deep Learning (PyTorch, XAI)</strong> skills. 
+            Passionate about turning complex raw data into actionable intelligence and building high-performance tech products.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary btn-lg">
+              <span>Explore My Work</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <button class="btn btn-outline btn-lg" onclick="openResumeModal()">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>View Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-ghost btn-lg">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">9.20</span>
+                <span class="stat-label">B.Tech CGPA</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">91.4%</span>
+                <span class="stat-label">AI Model Accuracy</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">Runner-Up</span>
+                <span class="stat-label">Sparkathon Idea</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">60%</span>
+                <span class="stat-label">Latency Reduction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Profile Card -->
+        <div class="hero-visual">
+          <div class="profile-card-glass">
+            <div class="profile-glow"></div>
+            
+            <div class="profile-header">
+              <div class="avatar-container">
+                <div class="avatar-ring"></div>
+                <div class="avatar-inner">
+                  <span class="avatar-initials">LK</span>
+                </div>
+                <div class="online-badge" title="Actively Job Hunting"></div>
+              </div>
+              
+              <div class="profile-details">
+                <h3 class="profile-name">Linkesh Kumar E</h3>
+                <p class="profile-role">Data Analyst & Software Dev</p>
+                <div class="profile-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Chennai, India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-code-snippet">
+              <div class="window-buttons">
+                <span class="win-btn red"></span>
+                <span class="win-btn yellow"></span>
+                <span class="win-btn green"></span>
+                <span class="window-title">developer_profile.py</span>
+              </div>
+              <pre><code><span class="code-keyword">candidate</span> = {
+  <span class="code-prop">"name"</span>: <span class="code-str">"Linkesh Kumar E"</span>,
+  <span class="code-prop">"degree"</span>: <span class="code-str">"B.Tech CSE Graduate"</span>,
+  <span class="code-prop">"cgpa"</span>: <span class="code-num">9.20</span>,
+  <span class="code-prop">"languages"</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"Java"</span>, <span class="code-str">"SQL"</span>],
+  <span class="code-prop">"focus"</span>: [<span class="code-str">"Power BI"</span>, <span class="code-str">"PyTorch"</span>, <span class="code-str">"Data Eng"</span>],
+  <span class="code-prop">"status"</span>: <span class="code-bool">True</span> <span class="code-comment"># Ready to hire</span>
+}</code></pre>
+            </div>
+
+            <!-- Profile Badges -->
+            <div class="profile-tags">
+              <span class="badge badge-accent"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="badge badge-accent"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+              <span class="badge badge-accent"><i class="fa-solid fa-database"></i> SQL / SSMS</span>
+              <span class="badge badge-accent"><i class="fa-brands fa-java"></i> Java</span>
+              <span class="badge badge-accent"><i class="fa-solid fa-brain"></i> PyTorch XAI</span>
+            </div>
+
+            <!-- Social Links inside Card -->
+            <div class="profile-socials">
+              <a href="https://linkedin.com/in/linkesh-kumar-e-761646361/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/Linkesh-Kumar" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="mailto:linkeshkumar14@gmail.com" class="social-btn" title="Email Linkesh">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+919342447645" class="social-btn" title="Call Phone">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-compass"></i> Discover</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Bridging the gap between raw data analysis, intelligent machine learning, and pragmatic software engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main-card">
+            <h3 class="about-headline">
+              A computer science graduate eager to contribute to high-impact products and dynamic data ecosystems.
+            </h3>
+            <p>
+              I am a <strong>B.Tech Graduate in Computer Science and Engineering</strong> from 
+              <em>Hindustan Institute of Technology and Science, Chennai</em>, with an outstanding academic record of <strong>9.20 CGPA (First Class with Distinction)</strong>.
+            </p>
+            <p>
+              My expertise spans the intersection of <strong>Data Analytics & Business Intelligence</strong> 
+              (creating enterprise dashboards in Power BI and Tableau, building robust SQL queries) and 
+              <strong>Advanced Artificial Intelligence</strong> (developing multi-modal deep learning models with PyTorch, Vision Transformers, and clinical explainability).
+            </p>
+            <p>
+              Having completed a data analytics internship at <strong>CorroHealth Infotech</strong> and a virtual simulation with 
+              <strong>Deloitte Australia</strong>, I have real experience handling messy business datasets, building 5-tier employee grading frameworks, and formulating executive KPIs.
+            </p>
+
+            <div class="key-traits-grid">
+              <div class="trait-box">
+                <i class="fa-solid fa-magnifying-glass-chart trait-icon"></i>
+                <h4>Analytical Mindset</h4>
+                <p>Translating complex business metrics into intuitive visual dashboards.</p>
+              </div>
+              <div class="trait-box">
+                <i class="fa-solid fa-microchip trait-icon"></i>
+                <h4>AI & Explainability</h4>
+                <p>Building transparent models with SHAP & Grad-CAM for medical AI.</p>
+              </div>
+              <div class="trait-box">
+                <i class="fa-solid fa-people-group trait-icon"></i>
+                <h4>Team Player & Leader</h4>
+                <p>Collaborative problem solver with strong communication & adaptiveness.</p>
+              </div>
+              <div class="trait-box">
+                <i class="fa-solid fa-rocket trait-icon"></i>
+                <h4>Fast Learner</h4>
+                <p>Constantly picking up emerging tools, frameworks, and best practices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Information Sidebar -->
+          <div class="about-details-card">
+            <h3 class="card-title"><i class="fa-solid fa-id-card"></i> Quick Information</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label"><i class="fa-solid fa-user"></i> Full Name</span>
+                <span class="info-value">Linkesh Kumar E</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-location-dot"></i> Location</span>
+                <span class="info-value">Chennai, Tamil Nadu, India</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-envelope"></i> Email</span>
+                <span class="info-value clickable-copy" onclick="copyText('linkeshkumar14@gmail.com', 'Email copied!')" title="Click to copy">
+                  linkeshkumar14@gmail.com <i class="fa-regular fa-copy"></i>
+                </span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-phone"></i> Phone</span>
+                <span class="info-value clickable-copy" onclick="copyText('+91-9342447645', 'Phone number copied!')" title="Click to copy">
+                  +91 9342447645 <i class="fa-regular fa-copy"></i>
+                </span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Degree</span>
+                <span class="info-value">B.Tech in CSE (Completed • 9.20 CGPA)</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-star"></i> University CGPA</span>
+                <span class="info-value highlight-badge">9.20 / 10.0</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-briefcase"></i> Availability</span>
+                <span class="info-value text-emerald">Immediate / Active</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-language"></i> Languages</span>
+                <span class="info-value">English, Tamil</span>
+              </li>
+            </ul>
+
+            <div class="about-card-action">
+              <button class="btn btn-primary w-full" onclick="openResumeModal()">
+                <i class="fa-solid fa-file-lines"></i> Open Formatted Resume
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-sliders"></i> Technical Stack</span>
+          <h2 class="section-title">My Skills &amp; <span class="gradient-text">Proficiencies</span></h2>
+          <p class="section-subtitle">A balanced toolkit bridging data analytics, deep learning research, backend databases, and modern systems.</p>
+        </div>
+
+        <!-- Skills Filter Tabs -->
+        <div class="skills-filter-tabs">
+          <button class="skill-tab active" data-filter="all">All Skills</button>
+          <button class="skill-tab" data-filter="data">Data &amp; BI</button>
+          <button class="skill-tab" data-filter="ai">AI / ML &amp; XAI</button>
+          <button class="skill-tab" data-filter="dev">Programming &amp; DB</button>
+          <button class="skill-tab" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Data Analytics & BI -->
+          <div class="skill-card" data-category="data">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap icon-cyan">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Data &amp; BI Tools</h3>
+                <span class="skill-count">Dashboards &amp; Insights</span>
+              </div>
+            </div>
+            <ul class="skill-items-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Power BI</span>
+                  <span class="skill-level">Advanced (DAX, Modeling)</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">SQL &amp; SSMS</span>
+                  <span class="skill-level">Proficient (Complex Queries)</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Tableau</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Advanced Excel</span>
+                  <span class="skill-level">Pivot, Lookup, Analysis</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">KPI &amp; Payor Reporting</span>
+                  <span class="skill-level">Performance Frameworks</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI & Deep Learning -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap icon-purple">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <h3 class="skill-group-title">AI &amp; Deep Learning</h3>
+                <span class="skill-count">Multi-Modal &amp; Explainability</span>
+              </div>
+            </div>
+            <ul class="skill-items-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">PyTorch</span>
+                  <span class="skill-level">Deep Learning Framework</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Vision Transformers (ViT)</span>
+                  <span class="skill-level">Computer Vision &amp; CT Scans</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">BioBERT &amp; NLP</span>
+                  <span class="skill-level">Clinical Text Processing</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Explainable AI (SHAP / Grad-CAM)</span>
+                  <span class="skill-level">Model Interpretability</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">DeepSurv &amp; Multi-Task Learning</span>
+                  <span class="skill-level">Survival Prediction</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 84%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Programming & Databases -->
+          <div class="skill-card" data-category="dev">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap icon-emerald">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Languages &amp; Databases</h3>
+                <span class="skill-count">Core Computer Science</span>
+              </div>
+            </div>
+            <ul class="skill-items-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level">Pandas, NumPy, Scikit, PyTorch</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-level">OOP, Data Structures, Core Java</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">DBMS &amp; MySQL</span>
+                  <span class="skill-level">Relational Modeling, Indexing</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">MongoDB</span>
+                  <span class="skill-level">Certified Basics &amp; NoSQL</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 / CSS3</span>
+                  <span class="skill-level">Responsive Web Layouts</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Systems & Soft Skills -->
+          <div class="skill-card" data-category="soft">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap icon-amber">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Frameworks &amp; Soft Skills</h3>
+                <span class="skill-count">Interpersonal &amp; Delivery</span>
+              </div>
+            </div>
+            <ul class="skill-items-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Analytical Problem Solving</span>
+                  <span class="skill-level">Root cause identification</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Leadership &amp; Teamwork</span>
+                  <span class="skill-level">Sparkathon Runner-Up team lead</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Flutter &amp; Node.js</span>
+                  <span class="skill-level">Full-Stack Mobile &amp; API Dev</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 78%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">IoT &amp; ANPR Integration</span>
+                  <span class="skill-level">Hardware &amp; Computer Vision</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Continuous Learning</span>
+                  <span class="skill-level">Fast adoption of tech stacks</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & INTERNSHIPS -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Career Journey</span>
+          <h2 class="section-title">Internships &amp; <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">Real-world experience turning healthcare and corporate data into operational intelligence.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- CorroHealth Infotech -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge">Internship</span>
+                  <h3 class="timeline-role">Data Analytics Intern</h3>
+                  <h4 class="timeline-company">CorroHealth Infotech • Chennai, India</h4>
+                </div>
+                <div class="timeline-date">
+                  <i class="fa-regular fa-calendar-days"></i> June 2024 – July 2024
+                </div>
+              </div>
+
+              <div class="timeline-tech-stack">
+                <span class="tech-pill">Power BI</span>
+                <span class="tech-pill">SQL Server (SSMS)</span>
+                <span class="tech-pill">Data Modeling</span>
+                <span class="tech-pill">KPI Frameworks</span>
+                <span class="tech-pill">Healthcare Analytics</span>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Developed the comprehensive <strong>ABC Payor Performance Dashboard</strong> in Power BI, enabling leadership to track claim reimbursement rates and provider turnaround times.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Analyzed, cleaned, and transformed complex multi-relational healthcare datasets from SQL Server Management Studio (SSMS) into interactive, user-friendly visual summaries.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Engineered an automated <strong>Grading Framework</strong> classifying staff cohorts from <em>Grade A to Grade E</em> using composite evaluation across attendance, weekly assessment scores, quality metrics, and production output.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Assisted team leads in eliminating reporting bottlenecks, cutting manual compilation hours and driving data-driven decisions.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Deloitte Australia Simulation -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge badge-simulation">Virtual Simulation</span>
+                  <h3 class="timeline-role">Data Analytics Job Simulation</h3>
+                  <h4 class="timeline-company">Deloitte Australia (via Forage)</h4>
+                </div>
+                <div class="timeline-date">
+                  <i class="fa-regular fa-calendar-days"></i> December 2025
+                </div>
+              </div>
+
+              <div class="timeline-tech-stack">
+                <span class="tech-pill">Tableau</span>
+                <span class="tech-pill">Forensic Analytics</span>
+                <span class="tech-pill">Advanced Excel</span>
+                <span class="tech-pill">Business Reporting</span>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Completed an intensive virtual job simulation focused on practical enterprise data analysis and forensic technology workflows.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Constructed dynamic <strong>Tableau dashboards</strong> to visualize critical business insights, risk factors, and organizational patterns.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Applied advanced Excel modeling, statistical categorization, and forensic analysis techniques to raw business records to derive actionable commercial conclusions.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-code-fork"></i> Innovation &amp; Code</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">A showcase of deep learning research, IoT systems engineering, and business analytics.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="projects-filter">
+          <button class="proj-filter-btn active" data-filter="all">All Projects</button>
+          <button class="proj-filter-btn" data-filter="ai">AI / Deep Learning</button>
+          <button class="proj-filter-btn" data-filter="iot">IoT &amp; Mobile</button>
+          <button class="proj-filter-btn" data-filter="analytics">Data Analytics</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Panclive -->
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div class="project-badge-group">
+                <span class="proj-tag tag-ai"><i class="fa-solid fa-brain"></i> Deep Learning &amp; Healthcare</span>
+                <span class="proj-date">Sep 2025 – Apr 2026</span>
+              </div>
+              <h3 class="project-title">Panclive — Multi-Modal XAI for Pancreatic Cancer Diagnosis</h3>
+              <p class="project-tagline">Clinical Deep Learning Framework Integrating CT Imaging, Clinical Text, &amp; Survival Analysis</p>
+            </div>
+
+            <div class="project-body">
+              <p class="project-desc">
+                Developed an end-to-end multi-modal deep learning architecture fusing high-resolution CT scans, 
+                free-text clinical notes, and structured patient records to detect pancreatic tumors and forecast patient survival.
+              </p>
+
+              <!-- Project Impact Metrics -->
+              <div class="project-kpi-grid">
+                <div class="kpi-box">
+                  <span class="kpi-num">91.4%</span>
+                  <span class="kpi-txt">Diagnostic Accuracy</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">0.82</span>
+                  <span class="kpi-txt">C-Index Survival</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">+14%</span>
+                  <span class="kpi-txt">Over Uni-Modal Models</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">90.8%</span>
+                  <span class="kpi-txt">Precision Rate</span>
+                </div>
+              </div>
+
+              <div class="project-highlights">
+                <div class="ph-item"><i class="fa-solid fa-atom"></i> <strong>Vision Transformer &amp; BioBERT:</strong> Cross-attention fusion pipeline for multi-modal feature synchronization.</div>
+                <div class="ph-item"><i class="fa-solid fa-eye"></i> <strong>Explainable AI (XAI):</strong> Grad-CAM tumor attention maps &amp; SHAP clinical biomarker attribution for oncological interpretability.</div>
+                <div class="ph-item"><i class="fa-solid fa-chart-line"></i> <strong>DeepSurv:</strong> Multi-task survival prediction evaluated with 5-fold cross-validation on 112 patient cohorts.</div>
+              </div>
+
+              <div class="project-stack">
+                <span class="stack-badge">Python</span>
+                <span class="stack-badge">PyTorch</span>
+                <span class="stack-badge">Vision Transformer (ViT)</span>
+                <span class="stack-badge">BioBERT</span>
+                <span class="stack-badge">DeepSurv</span>
+                <span class="stack-badge">SHAP</span>
+                <span class="stack-badge">Grad-CAM</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-primary btn-sm" onclick="openProjectModal('panclive')">
+                <i class="fa-solid fa-circle-info"></i> View Deep-Dive Specs
+              </button>
+              <a href="https://github.com/Linkesh-Kumar" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: ParkIt -->
+          <div class="project-card" data-category="iot">
+            <div class="project-header">
+              <div class="project-badge-group">
+                <span class="proj-tag tag-iot"><i class="fa-solid fa-microchip"></i> IoT &amp; Full-Stack</span>
+                <span class="proj-date">Sep 2023 – Nov 2023</span>
+              </div>
+              <h3 class="project-title">ParkIt — Smart Parking Management System</h3>
+              <p class="project-tagline">Automated Slot Reservation with IoT Sensing &amp; License Plate Recognition</p>
+            </div>
+
+            <div class="project-body">
+              <p class="project-desc">
+                An intelligent urban parking ecosystem featuring a cross-platform mobile app, IoT hardware bay sensors, 
+                and Automated Number Plate Recognition (ANPR) cameras for seamless vehicle check-in and checkout.
+              </p>
+
+              <!-- Project Impact Metrics -->
+              <div class="project-kpi-grid">
+                <div class="kpi-box">
+                  <span class="kpi-num">-60%</span>
+                  <span class="kpi-txt">Parking Search Time</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">95%</span>
+                  <span class="kpi-txt">Booking Accuracy</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">40%</span>
+                  <span class="kpi-txt">Faster SQL Queries</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">100%</span>
+                  <span class="kpi-txt">Contactless Entry</span>
+                </div>
+              </div>
+
+              <div class="project-highlights">
+                <div class="ph-item"><i class="fa-solid fa-mobile-screen"></i> <strong>Flutter Mobile App:</strong> Interactive slot visualizer allowing drivers to pre-book and pay securely.</div>
+                <div class="ph-item"><i class="fa-solid fa-camera"></i> <strong>IoT &amp; ANPR Integration:</strong> Computer vision automated barrier control upon recognizing registered license plates.</div>
+                <div class="ph-item"><i class="fa-solid fa-server"></i> <strong>Node.js &amp; MySQL Backend:</strong> Optimized concurrency and database queries, shaving API response time by 40%.</div>
+              </div>
+
+              <div class="project-stack">
+                <span class="stack-badge">Flutter</span>
+                <span class="stack-badge">Node.js</span>
+                <span class="stack-badge">MySQL</span>
+                <span class="stack-badge">IoT Hardware</span>
+                <span class="stack-badge">ANPR</span>
+                <span class="stack-badge">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-primary btn-sm" onclick="openProjectModal('parkit')">
+                <i class="fa-solid fa-circle-info"></i> View System Architecture
+              </button>
+              <a href="https://github.com/Linkesh-Kumar" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Enterprise Analytics (Featured Wide Bottom Card) -->
+          <div class="project-card featured-wide-card" data-category="analytics">
+            <div class="wide-card-left">
+              <div class="project-header">
+                <div class="project-badge-group">
+                  <span class="proj-tag tag-bi"><i class="fa-solid fa-chart-line"></i> Business Intelligence</span>
+                  <span class="proj-date">Summer 2024</span>
+                </div>
+                <h3 class="project-title">ABC Payor Performance &amp; Workforce Grading System</h3>
+                <p class="project-tagline">Healthcare Insurance Claim SLA Tracking &amp; Multi-Factor Workforce Grading</p>
+              </div>
+
+              <p class="project-desc">
+                Developed an analytical BI suite for health insurance payor claim performance metrics and employee grading 
+                at CorroHealth Infotech, synthesizing massive transactional logs into actionable management scorecards.
+              </p>
+
+              <div class="project-highlights">
+                <div class="ph-item"><i class="fa-solid fa-layer-group"></i> <strong>Payor Performance Dashboard:</strong> Visualizing claim approval timelines, denial ratios, and turnaround times.</div>
+                <div class="ph-item"><i class="fa-solid fa-ranking-star"></i> <strong>Composite Grading Algorithm:</strong> Formula weighing attendance, assessment scores, QA rates, and hourly outputs.</div>
+                <div class="ph-item"><i class="fa-solid fa-database"></i> <strong>ETL &amp; SSMS Pipelines:</strong> Relational schema design and data modeling ensuring seamless DAX calculations.</div>
+              </div>
+            </div>
+
+            <div class="wide-card-right">
+              <!-- Project Impact Metrics -->
+              <div class="project-kpi-grid">
+                <div class="kpi-box">
+                  <span class="kpi-num">5-Tier</span>
+                  <span class="kpi-txt">Grading Framework (A-E)</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">100%</span>
+                  <span class="kpi-txt">Automated KPI Score</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">SSMS</span>
+                  <span class="kpi-txt">Enterprise Data Prep</span>
+                </div>
+                <div class="kpi-box">
+                  <span class="kpi-num">Power BI</span>
+                  <span class="kpi-txt">Executive Reporting</span>
+                </div>
+              </div>
+
+              <div class="project-stack">
+                <span class="stack-badge">Power BI</span>
+                <span class="stack-badge">SQL (SSMS)</span>
+                <span class="stack-badge">DAX Formulas</span>
+                <span class="stack-badge">Data Modeling</span>
+                <span class="stack-badge">ETL Pipeline</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm" onclick="openProjectModal('analytics')">
+                  <i class="fa-solid fa-circle-info"></i> View Dashboard Breakdown
+                </button>
+                <a href="#experience" class="btn btn-ghost btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Internship Context
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Background</span>
+          <h2 class="section-title">Education &amp; <span class="gradient-text">Qualifications</span></h2>
+          <p class="section-subtitle">Consistent record of academic distinction and technical foundations.</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- B.Tech -->
+          <div class="edu-card main-edu-card">
+            <div class="edu-card-badge"><i class="fa-solid fa-circle-check"></i> Degree Completed</div>
+            <div class="edu-header">
+              <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+              <div>
+                <span class="edu-period">2022 – 2026</span>
+                <h3 class="edu-degree">B.Tech in Computer Science and Engineering</h3>
+                <h4 class="edu-school">Hindustan Institute of Technology and Science (HITS)</h4>
+                <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Chennai, India</p>
+              </div>
+            </div>
+
+            <div class="edu-score-banner">
+              <span class="score-label">Cumulative Grade Point Average</span>
+              <span class="score-number">9.20 <span class="score-scale">/ 10.0</span></span>
+              <span class="score-status">First Class with Distinction</span>
+            </div>
+
+            <div class="edu-details">
+              <h5>Relevant Core Coursework:</h5>
+              <div class="course-chips">
+                <span class="chip">Data Structures &amp; Algorithms</span>
+                <span class="chip">Database Management Systems (DBMS)</span>
+                <span class="chip">Object-Oriented Programming (Java/Python)</span>
+                <span class="chip">Artificial Intelligence &amp; Deep Learning</span>
+                <span class="chip">Operating Systems &amp; System Architecture</span>
+                <span class="chip">Computer Networks &amp; Security</span>
+                <span class="chip">Big Data &amp; Business Intelligence</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schooling Grid -->
+          <div class="edu-card-column">
+            <!-- Class XII -->
+            <div class="edu-card sub-edu-card">
+              <div class="edu-header">
+                <div class="edu-icon icon-emerald"><i class="fa-solid fa-school"></i></div>
+                <div>
+                  <span class="edu-period">2021 – 2022</span>
+                  <h3 class="edu-degree">Higher Secondary Education (Class XII)</h3>
+                  <h4 class="edu-school">Sri Sankara Vidyashramam Matriculation Higher Secondary School</h4>
+                  <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Chennai, India • TNBHSE</p>
+                  <div class="edu-score-pill">
+                    <span>Score:</span>
+                    <strong>88.50%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Class X -->
+            <div class="edu-card sub-edu-card">
+              <div class="edu-header">
+                <div class="edu-icon icon-cyan"><i class="fa-solid fa-book-open"></i></div>
+                <div>
+                  <span class="edu-period">2019 – 2020</span>
+                  <h3 class="edu-degree">Secondary Education (Class X)</h3>
+                  <h4 class="edu-school">Sri Sankara Vidyashramam Matriculation Higher Secondary School</h4>
+                  <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Chennai, India • TNBSE</p>
+                  <div class="edu-score-pill">
+                    <span>Score:</span>
+                    <strong>91.60%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+    <section id="achievements" class="section achievements-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-award"></i> Recognition &amp; Upskilling</span>
+          <h2 class="section-title">Certifications &amp; <span class="gradient-text">Achievements</span></h2>
+          <p class="section-subtitle">Verified credentials and competitive hackathon honors.</p>
+        </div>
+
+        <div class="achieve-grid">
+          <!-- Sparkathon Runner-Up -->
+          <div class="achieve-card featured-achieve">
+            <div class="trophy-badge"><i class="fa-solid fa-trophy"></i></div>
+            <div class="achieve-content">
+              <span class="achieve-type">Competitive Award</span>
+              <h3 class="achieve-title">Sparkathon Idea Presentation — Runner-Up</h3>
+              <p class="achieve-org"><i class="fa-solid fa-users"></i> Idea Presentation Competition</p>
+              <p class="achieve-desc">
+                Competed in the prestigious <strong>Sparkathon</strong> ideation battle against multi-disciplinary university teams. 
+                Presented a novel technical solution and architecture, securing the <strong>Runner-Up position</strong> in the Idea Presentation category for innovative feasibility and strategic pitch.
+              </p>
+              <div class="achieve-pill-wrap">
+                <span class="badge badge-accent"><i class="fa-solid fa-medal"></i> 2nd Place</span>
+                <span class="badge badge-accent"><i class="fa-solid fa-lightbulb"></i> Product Strategy</span>
+                <span class="badge badge-accent"><i class="fa-solid fa-microphone"></i> Public Pitching</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MongoDB Certification -->
+          <div class="achieve-card">
+            <div class="cert-icon-wrap icon-emerald"><i class="fa-solid fa-leaf"></i></div>
+            <div class="achieve-content">
+              <span class="achieve-type">Professional Credential</span>
+              <h3 class="achieve-title">MongoDB Basics for Students</h3>
+              <p class="achieve-org"><i class="fa-solid fa-certificate"></i> MongoDB University • June 2025</p>
+              <p class="achieve-desc">
+                Mastered foundational NoSQL document modeling, aggregation pipelines, indexing mechanisms, and Atlas cloud deployment fundamentals.
+              </p>
+              <div class="achieve-pill-wrap">
+                <span class="badge"><i class="fa-solid fa-database"></i> NoSQL</span>
+                <span class="badge"><i class="fa-solid fa-check"></i> Document Stores</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deloitte Australia Job Sim -->
+          <div class="achieve-card">
+            <div class="cert-icon-wrap icon-cyan"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="achieve-content">
+              <span class="achieve-type">Corporate Simulation</span>
+              <h3 class="achieve-title">Data Analytics Job Simulation</h3>
+              <p class="achieve-org"><i class="fa-solid fa-building"></i> Deloitte Australia (Forage) • Dec 2025</p>
+              <p class="achieve-desc">
+                Conducted forensic data analysis, business metric classification, and visual storytelling via Tableau dashboards and advanced Excel modeling.
+              </p>
+              <div class="achieve-pill-wrap">
+                <span class="badge"><i class="fa-solid fa-chart-column"></i> Tableau</span>
+                <span class="badge"><i class="fa-solid fa-file-excel"></i> Forensic Data</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Let's Connect</span>
+          <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Looking for an enthusiastic fresher ready to create value from day one? Let's discuss open roles!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Channels -->
+          <div class="contact-info-panel">
+            <h3 class="contact-panel-title">Let's build something impactful together.</h3>
+            <p class="contact-panel-desc">
+              I am actively looking for full-time entry-level opportunities as a 
+              <strong>Data Analyst, Software Engineer, or AI/ML Engineer</strong>. 
+              Whether you have an opening, a question about my projects, or just want to connect, feel free to reach out!
+            </p>
+
+            <div class="contact-cards-stack">
+              <!-- Email Card -->
+              <div class="contact-method-card" onclick="copyText('linkeshkumar14@gmail.com', 'Email copied!')">
+                <div class="method-icon icon-purple"><i class="fa-solid fa-envelope"></i></div>
+                <div class="method-info">
+                  <span class="method-label">Email Address</span>
+                  <a href="mailto:linkeshkumar14@gmail.com" class="method-val" onclick="event.stopPropagation()">linkeshkumar14@gmail.com</a>
+                </div>
+                <button class="copy-pill" title="Click to copy email"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-method-card" onclick="copyText('+91-9342447645', 'Phone number copied!')">
+                <div class="method-icon icon-emerald"><i class="fa-solid fa-phone"></i></div>
+                <div class="method-info">
+                  <span class="method-label">Direct Phone / WhatsApp</span>
+                  <a href="tel:+919342447645" class="method-val" onclick="event.stopPropagation()">+91 9342447645</a>
+                </div>
+                <button class="copy-pill" title="Click to copy phone"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+
+              <!-- LinkedIn Card -->
+              <a href="https://linkedin.com/in/linkesh-kumar-e-761646361/" target="_blank" rel="noopener noreferrer" class="contact-method-card link-card">
+                <div class="method-icon icon-cyan"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="method-info">
+                  <span class="method-label">Professional Network</span>
+                  <span class="method-val">linkedin.com/in/linkesh-kumar-e-761646361/</span>
+                </div>
+                <span class="arrow-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+
+              <!-- GitHub Card -->
+              <a href="https://github.com/Linkesh-Kumar" target="_blank" rel="noopener noreferrer" class="contact-method-card link-card">
+                <div class="method-icon icon-amber"><i class="fa-brands fa-github"></i></div>
+                <div class="method-info">
+                  <span class="method-label">Code Repositories</span>
+                  <span class="method-val">github.com/Linkesh-Kumar</span>
+                </div>
+                <span class="arrow-pill"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+
+              <!-- Location Card -->
+              <div class="contact-method-card">
+                <div class="method-icon"><i class="fa-solid fa-map-pin"></i></div>
+                <div class="method-info">
+                  <span class="method-label">Current Base</span>
+                  <span class="method-val">Chennai, Tamil Nadu, India (Open to Relocation &amp; Remote)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-panel">
+            <h3 class="form-title"><i class="fa-solid fa-envelope-open-text"></i> Send a Direct Message</h3>
+            <p class="form-desc">Fill out the quick form below to launch your email client or copy the message directly.</p>
+
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label for="user-name">Your Name</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="user-name" name="name" placeholder="e.g. Recruiter / Hiring Manager" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="user-email">Your Work Email</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="user-email" name="email" placeholder="e.g. name@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="user-subject">Subject / Opportunity</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-tag"></i>
+                  <input type="text" id="user-subject" name="subject" placeholder="e.g. Role Discussion: Data Analyst / SDE" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message">Your Message</label>
+                <div class="input-wrap">
+                  <textarea id="user-message" name="message" rows="5" placeholder="Hi Linkesh, we'd like to discuss an opportunity regarding..." required></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary w-full">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Send Message to Linkesh</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#home" class="logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">LK</span>
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Crafted with modern HTML5, CSS3 &amp; JS. Designed for recruiters and innovators.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/linkesh-kumar-e-761646361/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Linkesh-Kumar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:linkeshkumar14@gmail.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Linkesh Kumar E. All rights reserved.</p>
+        <p class="made-with">Built with <i class="fa-solid fa-heart" style="color: #f43f5e;"></i> for high performance.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME MODAL & PRINT VIEW -->
+  <div id="resume-modal" class="modal-overlay hidden" onclick="handleModalOverlayClick(event, 'resume-modal')">
+    <div class="modal-card resume-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-pdf modal-icon"></i>
+          <div>
+            <h3 class="modal-title">Linkesh Kumar E — Curriculum Vitae</h3>
+            <p class="modal-sub">Executive Summary &amp; Comprehensive Credentials</p>
+          </div>
+        </div>
+        <div class="modal-actions-top">
+          <button class="btn btn-primary btn-sm" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> Print / Save as PDF
+          </button>
+          <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body printable-resume" id="printable-resume">
+        <!-- Resume Header -->
+        <div class="res-head text-center">
+          <h1 class="res-name">LINKESH KUMAR E</h1>
+          <p class="res-contact-bar">
+            <span><i class="fa-solid fa-phone"></i> +91-9342447645</span> | 
+            <span><i class="fa-solid fa-envelope"></i> linkeshkumar14@gmail.com</span> | 
+            <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/linkesh-kumar-e-761646361/</span> | 
+            <span><i class="fa-brands fa-github"></i> github.com/Linkesh-Kumar</span>
+          </p>
+        </div>
+
+        <hr class="res-divider">
+
+        <!-- Executive Summary -->
+        <div class="res-section">
+          <h2 class="res-sec-title">EXECUTIVE SUMMARY</h2>
+          <p class="res-text">
+            Motivated B.Tech graduate with strong programming and data analytics skills. Seeking an entry-level position to leverage technical expertise and contribute to innovative projects while gaining valuable practical experience in the tech industry.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="res-section">
+          <h2 class="res-sec-title">EDUCATION</h2>
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>Hindustan Institute of Technology and Science</strong>, Chennai, India</span>
+              <span class="res-date">2022 – 2026</span>
+            </div>
+            <div class="res-sub">
+              <em>B.Tech in Computer Science and Engineering</em> — <strong>CGPA: 9.20</strong>
+            </div>
+          </div>
+
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>Sri Sankara Vidyashramam Matriculation Higher Secondary School</strong>, Chennai, India</span>
+              <span class="res-date">2021 – 2022</span>
+            </div>
+            <div class="res-sub">
+              <em>Higher Secondary Education (Class XII)</em> — TNBHSE — <strong>Percentage: 88.50%</strong>
+            </div>
+          </div>
+
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>Sri Sankara Vidyashramam Matriculation Higher Secondary School</strong>, Chennai, India</span>
+              <span class="res-date">2019 – 2020</span>
+            </div>
+            <div class="res-sub">
+              <em>Secondary Education (Class X)</em> — TNBSE — <strong>Percentage: 91.60%</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="res-section">
+          <h2 class="res-sec-title">SKILLS</h2>
+          <ul class="res-skills-list">
+            <li><strong>Programming Languages:</strong> Python, Java</li>
+            <li><strong>Web Technologies:</strong> HTML, CSS, Node.js, Flutter</li>
+            <li><strong>Databases:</strong> DBMS, SQL, MySQL, MongoDB</li>
+            <li><strong>Data &amp; BI Tools:</strong> Power BI, Tableau, Advanced Excel, SSMS</li>
+            <li><strong>AI / ML Stack:</strong> PyTorch, Vision Transformer, BioBERT, DeepSurv, SHAP, Grad-CAM</li>
+            <li><strong>Soft Skills:</strong> Leadership, Teamwork, Problem Solving, Adaptability, Continuous Learning</li>
+          </ul>
+        </div>
+
+        <!-- Internship Experience -->
+        <div class="res-section">
+          <h2 class="res-sec-title">INTERNSHIP</h2>
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>CorroHealth Infotech</strong>, Chennai, India</span>
+              <span class="res-date">June 2024 – July 2024</span>
+            </div>
+            <div class="res-sub">
+              <em>Data Analytics Intern using Power BI — SQL, SSMS</em>
+            </div>
+            <ul class="res-bullet-list">
+              <li>Developed an <strong>ABC Payor Performance Dashboard</strong> using Power BI.</li>
+              <li>Analyzed and transformed complex datasets to design interactive and user-friendly visualizations.</li>
+              <li>Designed a grading framework that classifies employees from Grade A to E based on attendance, assessment scores, quality metrics, and production performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="res-section">
+          <h2 class="res-sec-title">PROJECTS</h2>
+          
+          <!-- ParkIt -->
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>ParkIt — Smart Parking Management System</strong></span>
+              <span class="res-date">Sep 2023 – Nov 2023</span>
+            </div>
+            <div class="res-sub">
+              <em>Flutter, Node.js, MySQL, IoT, ANPR</em>
+            </div>
+            <ul class="res-bullet-list">
+              <li>Developed a Flutter-based mobile application enabling users to pre-book parking slots, reducing search time by 60%.</li>
+              <li>Implemented real-time slot availability using MySQL, improving booking accuracy by 95%.</li>
+              <li>Integrated IoT sensors and ANPR for automated vehicle entry and exit tracking.</li>
+              <li>Optimized backend SQL queries, reducing API response time by 40%.</li>
+            </ul>
+          </div>
+
+          <!-- Panclive -->
+          <div class="res-entry">
+            <div class="res-entry-head">
+              <span class="res-inst"><strong>Panclive — Multi-Modal XAI for Pancreatic Cancer Diagnosis</strong></span>
+              <span class="res-date">Sep 2025 – Apr 2026</span>
+            </div>
+            <div class="res-sub">
+              <em>Python, PyTorch, Vision Transformer, BioBERT, DeepSurv, SHAP, Grad-CAM</em>
+            </div>
+            <ul class="res-bullet-list">
+              <li>Developed a multi-modal deep learning framework integrating CT scans, clinical text, and structured data for pancreatic cancer diagnosis.</li>
+              <li>Achieved 91.4% accuracy and 0.82 C-index for survival prediction, outperforming uni-modal models by 14%.</li>
+              <li>Built a multi-task learning pipeline using 112 patient records and five-fold cross-validation to improve robustness.</li>
+              <li>Implemented Grad-CAM and SHAP explainability to highlight tumor regions and key biomarkers for clinical interpretability.</li>
+              <li>Optimized cross-attention fusion, improving diagnostic precision to 90.8% and F1-score to 90.1%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="res-section">
+          <h2 class="res-sec-title">CERTIFICATIONS</h2>
+          <ul class="res-bullet-list">
+            <li><strong>MongoDB Basics for Students</strong> (MongoDB) — June 2025</li>
+            <li><strong>Deloitte Australia – Data Analytics Job Simulation</strong> (Forage) — December 2025<br>
+            <span class="res-note">Completed a virtual job simulation focused on data analysis and forensic technology and built interactive dashboards using Tableau to visualize business insights. Applied Excel techniques to classify datasets and derive business conclusions.</span></li>
+          </ul>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="res-section">
+          <h2 class="res-sec-title">KEY ACHIEVEMENTS</h2>
+          <ul class="res-bullet-list">
+            <li>Competed in <strong>Sparkathon</strong> (Idea Presentation Competition) and secured <strong>runner-up position</strong> in the Idea Presentation category.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeResumeModal()">Close Window</button>
+        <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DEEP-DIVE MODAL -->
+  <div id="project-modal" class="modal-overlay hidden" onclick="handleModalOverlayClick(event, 'project-modal')">
+    <div class="modal-card project-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-layer-group modal-icon"></i>
+          <div>
+            <h3 class="modal-title" id="proj-modal-title">Project Details</h3>
+            <p class="modal-sub" id="proj-modal-sub">Architecture &amp; Engineering Breakdown</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="proj-modal-body">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeProjectModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>
